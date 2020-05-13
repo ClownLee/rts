@@ -10,18 +10,10 @@ import { RouteInterface } from './assets/interface';
 import './App.css';
 
 class Nav extends React.Component<any, any> {
-  state={
-    style: {}
-  }
-  componentWillUnmount(): void {
-    this.setState({
-      style:  this.props.children ? {display: 'none'} : {}
-    });
-  }
 
   render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
 
-    return <ul style={this.state.style}>
+    return <ul>
       {this.props.navs.map((item:RouteInterface, index: number) => (
           !item.hide && <li key={index} >
             <Link to={item.path}>{item.name}</Link>
@@ -41,7 +33,6 @@ class Content extends React.Component<any, any> {
     </>;
   }
 }
-
 
 class App extends React.Component<any, any>{
   render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {

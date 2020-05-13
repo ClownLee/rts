@@ -39,8 +39,8 @@ const routes = [
             {
                 path: '/',
                 component: Home,
-                name: "",
-                hide: true
+                name: "首页",
+                hide: false
             },
             {
                 path: '/about',
